@@ -44,3 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     cards.forEach((card) => observer.observe(card));
   });
+
+  // Находим элемент с классом menu
+const menu = document.querySelector('.menu');
+
+// Добавляем обработчик клика
+menu.addEventListener('click', function() {
+  // Переключаем класс open
+  this.classList.toggle('open');
+});
