@@ -1,20 +1,29 @@
  
-  const burger = document.getElementById("burger");
-  const nav = document.getElementById("nav");
-  const links = document.querySelectorAll(".header-list-a");
+  //const burger = document.getElementById("burger");
+  //const nav = document.getElementById("nav");
+  //const links = document.querySelectorAll(".header-list-a");
 
-  burger.addEventListener("click", () => {
-    burger.classList.toggle("open");
-    nav.classList.toggle("open");
+  //burger.addEventListener("click", () => {
+  //  burger.classList.toggle("open");
+  //  nav.classList.toggle("open");
+  //});
+
+  //links.forEach(link => {
+  //  link.addEventListener("click", () => {
+  //    burger.classList.remove("open");
+  //    nav.classList.remove("open");
+  //  });
+  //});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const burger = document.getElementById('burger');
+  const nav = document.getElementById('nav');
+
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    nav.classList.toggle('open');
   });
-
-  links.forEach(link => {
-    link.addEventListener("click", () => {
-      burger.classList.remove("open");
-      nav.classList.remove("open");
-    });
-  });
-
+});
 
 
 
