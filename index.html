@@ -55,30 +55,27 @@
     <script src="./assets/js/index.js" defer></script>
   </head>
   <body>
-    <header class="header">
-      <div class="header-container">
-        <a class="header-logo" href="#home">
-          <img class="header-icon" src="./assets/img/logo.png" alt="Logo" />
-        </a>
-        <nav class="header-nav">
-          <ul class="header-list">
-            <li class="header-li">
-              <a class="header-list-a" href="#about">Про мене</a>
-            </li>
-            <li class="header-li"><a href="#services">Послуги</a></li>
-            <li class="header-li"><a href="#contact">Контакти</a></li>
-            <li class="header-li">
-              <a href="tel:+380938685923">+380938685923</a>
-            </li>
-          </ul>
-        </nav>
-        <button class="burger" aria-label="Відкрити меню">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </header>
+ <header class="header">
+  <div class="header-container">
+    <a class="header-logo" href="#home">
+      <img class="header-icon" src="./assets/img/logo.png" alt="Logo" />
+    </a>
+
+    <nav class="header-nav" id="nav">
+      <ul class="header-list">
+        <li class="header-li"><a class="header-list-a" href="#about">Про мене</a></li>
+        <li class="header-li"><a class="header-list-a" href="#services">Послуги</a></li>
+        <li class="header-li"><a class="header-list-a" href="#contact">Контакти</a></li>
+        <li class="header-li"><a class="header-list-a" href="tel:+380938685923">+380938685923</a></li>
+      </ul>
+    </nav>
+
+    <button class="burger" id="burger" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
 
     <section class="main" id="about">
       <div class="info-woman">
@@ -313,7 +310,7 @@
               </li>
               <li class="experience-text">
                 Велике значення надається почуттям, фантазіям і бажанням
-                пацієнта...
+                клієнтів...
               </li>
               <li class="experience-text">
                 Наша основна мета – визначити ці реакції під час сесій...
@@ -495,7 +492,7 @@
             <img src="./assets/img/mail.png" alt="Email" />
             <span>svprydnik@ukr.net</span>
           </a>
-          <a href="https://www.facebook.com/profile.php?id=100057728405241">
+          <a href="https://t.me/+380938685923" target="_blank">
             <img src="./assets/img/icons-телеграм.svg" alt="Telegram" />
             <span>Написати в телеграм</span>
           </a>

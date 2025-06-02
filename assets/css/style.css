@@ -61,7 +61,9 @@
   --grey200: #d0cfca;
 }
 
-
+* {
+  box-sizing: border-box;
+}
 
 html {
   scroll-behavior: smooth;
@@ -79,69 +81,59 @@ body {
   flex-direction: column;
   padding-top: 5rem;
   /* или немного больше, если хедер высокий */
-
+  overflow-x: hidden;
+  /* временная защита от горизонтального скролла */
 }
 
 /* Header */
-/* Общие стили остаются */
+
+/* Общее */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 100;
-  display: flex;
-  justify-content: center;
-  height: 5rem;
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  height: 5rem;
 }
 
 .header-container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  width: 100%;
-  max-width: clamp(60rem, 90vw, 75rem);
-  padding: 0 1rem;
-  margin: 0 auto;
-}
-
-.header-logo {
-  display: flex;
   align-items: center;
+  max-width: clamp(60rem, 90vw, 75rem);
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-.header-icon {
+.header-logo img {
   width: 5.625rem;
 }
 
-/* Навигация */
 .header-nav {
   display: flex;
-  align-items: center;
-  transition: all 0.3s ease;
 }
 
 .header-list {
-  list-style: none;
   display: flex;
-  gap: clamp(1rem, 3vw, 2rem);
-  padding: 0;
+  gap: 2rem;
+  list-style: none;
   margin: 0;
+  padding: 0;
 }
 
 .header-li {
-  font-size: clamp(1rem, 2vw, 1.25rem);
   white-space: nowrap;
-  font-family: 'Roboto', sans-serif;
 }
 
 .header-list-a {
   text-decoration: none;
   color: #333;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
   transition: color 0.3s ease;
 }
 
@@ -149,7 +141,7 @@ body {
   color: var(--main-color);
 }
 
-/* Бургер-иконка */
+/* Бургер */
 .burger {
   display: none;
   flex-direction: column;
@@ -159,67 +151,55 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 110;
+  z-index: 200;
 }
 
 .burger span {
-  display: block;
   height: 3px;
-  background-color: #333;
+  background: #333;
   border-radius: 2px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-/* Анимация крестика */
 .burger.open span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+  transform: rotate(45deg) translateY(6px);
 }
-
 .burger.open span:nth-child(2) {
   opacity: 0;
 }
-
 .burger.open span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+  transform: rotate(-45deg) translateY(-6px);
 }
 
 /* Мобильная адаптация */
-
 @media (max-width: 768px) {
   .burger {
     display: flex;
   }
 
   .header-nav {
+    display: none;
     position: absolute;
     top: 5rem;
-    right: 0;
+    left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.7);
-    /* полупрозрачность */
-    backdrop-filter: blur(15px);
-    /* эффект стекла */
-    -webkit-backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
     flex-direction: column;
     align-items: center;
-    transform: translateY(-100%);
-    opacity: 0;
-    pointer-events: none;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    padding: 1rem 0;
   }
 
   .header-nav.open {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
+    display: flex;
   }
 
   .header-list {
     flex-direction: column;
     gap: 1.5rem;
-    padding: 2rem 0;
   }
 }
+
 
 
 /* Main */

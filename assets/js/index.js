@@ -1,10 +1,20 @@
-  const burger = document.querySelector('.burger');
-  const nav = document.querySelector('.header-nav');
+ 
+  const burger = document.getElementById("burger");
+  const nav = document.getElementById("nav");
+  const links = document.querySelectorAll(".header-list-a");
 
-  burger.addEventListener('click', () => {
-    nav.classList.toggle('open');
-    burger.classList.toggle('open'); // для анимации крестика
+  burger.addEventListener("click", () => {
+    burger.classList.toggle("open");
+    nav.classList.toggle("open");
   });
+
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      burger.classList.remove("open");
+      nav.classList.remove("open");
+    });
+  });
+
 
 
 
