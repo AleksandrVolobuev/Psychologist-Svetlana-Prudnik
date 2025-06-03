@@ -149,125 +149,92 @@ body {
 }
 
 /* Бургер */
-.burger {
+
+
+.menu {
   display: none;
+ 
   flex-direction: column;
   justify-content: space-between;
-  width: 25px;
-  height: 20px;
-  background: none;
-  border: none;
+  height: 40px;
+  width: 50px;
+  position: relative;
   cursor: pointer;
-  z-index: 1100; /* выше меню */
-  padding: 0;
+   z-index: 1100; /* выше меню */
 }
-
-.burger span {
+.menu span {
+  display: inline-block;
+  width: 100%;
   height: 5px;
-  background: #333;
-  border-radius: 2px;
-  transition: 0.3s;
-  display: block;
+  background: #424242;
+  transition: all 0.5s ease;
 }
 
-/* Анимация бургера */
-.burger.open span:nth-child(1) {
-  transform: rotate(45deg) translateY(8px);
-}
-.burger.open span:nth-child(2) {
-  opacity: 0;
-}
-.burger.open span:nth-child(3) {
-  transform: rotate(-45deg) translateY(-8px);
-}
-/*бургегггг*/
-.btn1 {
+.hamburger9 span {
   position: absolute;
-  width: 60px;
-  height: 60px;
-  top: 100px;
-  left: 0px;
-  transition-duration: 0.5s;
+  right: 0;
 }
-.btn1 .icon-left {
-  transition-duration: 0.5s;
-  position: absolute;
-  height: 8px;
-  width: 30px;
-  top: 30px;
-  background-color: #212121;
-  left: 0px;
+.hamburger9 span:nth-of-type(1) {
+  top: 0;
+  animation-delay: 0.2s;
 }
-.btn1 .icon-left:before {
-  transition-duration: 0.5s;
-  position: absolute;
-  width: 30px;
-  height: 8px;
-  background-color: #212121;
-  content: "";
-  top: -20px;
+.hamburger9 span:nth-of-type(2) {
+  top: 18px;
 }
-.btn1 .icon-left:after {
-  transition-duration: 0.5s;
-  position: absolute;
-  width: 30px;
-  height: 8px;
-  background-color: #212121;
-  content: "";
-  top: 20px;
+.hamburger9 span:nth-of-type(3) {
+  top: 36px;
+  animation-delay: 0.2s;
 }
-.btn1 .icon-left:hover {
-  cursor: pointer;
+.hamburger9.active span:nth-of-type(1) {
+  animation: hamburger9animTop 1s ease;
+  animation-fill-mode: forwards;
 }
-.btn1 .icon-right {
-  transition-duration: 0.5s;
-  position: absolute;
-  height: 8px;
-  width: 30px;
-  top: 30px;
-  background-color: #212121;
-  left: 30px;
+.hamburger9.active span:nth-of-type(2) {
+  animation: hamburger9animMiddle 0.75s ease;
+  animation-fill-mode: forwards;
 }
-.btn1 .icon-right:before {
-  transition-duration: 0.5s;
-  position: absolute;
-  width: 30px;
-  height: 8px;
-  background-color: #212121;
-  content: "";
-  top: -20px;
+.hamburger9.active span:nth-of-type(3) {
+  animation: hamburger9animBottom 1s ease;
+  animation-fill-mode: forwards;
 }
-.btn1 .icon-right:after {
-  transition-duration: 0.5s;
-  position: absolute;
-  width: 30px;
-  height: 8px;
-  background-color: #212121;
-  content: "";
-  top: 20px;
+@keyframes hamburger9animTop {
+  0% {
+    transform: none;
+  }
+  40% {
+    top: 18px;
+    transform: none;
+  }
+  100% {
+    top: 18px;
+    transform: rotate(315deg);
+    transform-origin: center center;
+  }
 }
-.btn1.open .icon-left {
-  transition-duration: 0.5s;
-  background: transparent;
+@keyframes hamburger9animMiddle {
+  0% {
+    transform: none;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
-.btn1.open .icon-left:before {
-  transform: rotateZ(45deg) scaleX(1.4) translate(4px, 4px);
-}
-.btn1.open .icon-left:after {
-  transform: rotateZ(-45deg) scaleX(1.4) translate(4px, -4px);
-}
-.btn1.open .icon-right {
-  transition-duration: 0.5s;
-  background: transparent;
-}
-.btn1.open .icon-right:before {
-  transform: rotateZ(-45deg) scaleX(1.4) translate(-4px, 4px);
-}
-.btn1.open .icon-right:after {
-  transform: rotateZ(45deg) scaleX(1.4) translate(-4px, -4px);
-}
-.btn1:hover {
-  cursor: pointer;
+@keyframes hamburger9animBottom {
+  0% {
+    transform: none;
+  }
+  40% {
+    top: 18px;
+    transform: none;
+  }
+  100% {
+    top: 18px;
+    transform-origin: center center;
+    transform: rotate(225deg);
+  }
 }
 /* Мобильная версия */
 @media (max-width: 768px) {
@@ -299,7 +266,8 @@ body {
     padding: 2rem 0;
   }
 
-  .burger {
+  .burger,
+  .menu{
     display: flex;
   }
 
@@ -821,6 +789,7 @@ body {
   background: var(--liner2);
   background-size: 400% 400%;
   animation: bganimation 14s infinite;
+  overflow-x: hidden;
 }
 
 .review-card-p {
@@ -851,7 +820,10 @@ body {
   align-items: stretch;
   margin: 0 auto;
   padding: 1rem;
+  box-sizing: border-box;
+  overflow: hidden;
 }
+
 
 .review-cards-wrapper {
   display: flex;
@@ -870,9 +842,11 @@ body {
   flex-grow: 1;
 }
 
-.pexels-1 {
+.pexels-1-1 {
+  max-width: 100%;
   width: 100%;
-  height: 100%;
+  height: auto;
+  display: block;
   object-fit: cover;
   border-radius: 0.75rem;
   align-self: stretch;
@@ -884,7 +858,7 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .pexels-1 {
+  .pexels-1-1 {
     height: auto;
     max-height: 300px;
     margin-top: 1rem;
@@ -1031,7 +1005,7 @@ body {
 
 .frame15 {
   position: absolute;
-  top: 0;
+  top: 50%;
   left: -10%;
 }
 

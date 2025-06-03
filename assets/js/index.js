@@ -1,19 +1,4 @@
- 
-  //const burger = document.getElementById("burger");
-  //const nav = document.getElementById("nav");
-  //const links = document.querySelectorAll(".header-list-a");
 
-  //burger.addEventListener("click", () => {
-  //  burger.classList.toggle("open");
-  //  nav.classList.toggle("open");
-  //});
-
-  //links.forEach(link => {
-  //  link.addEventListener("click", () => {
-  //    burger.classList.remove("open");
-  //    nav.classList.remove("open");
-  //  });
-  //});
 
 document.addEventListener('DOMContentLoaded', () => {
   const burger = document.getElementById('burger');
@@ -23,6 +8,15 @@ document.addEventListener('DOMContentLoaded', () => {
     burger.classList.toggle('open');
     nav.classList.toggle('open');
   });
+});
+
+// Находим элемент с классом menu
+const menu = document.querySelector('.menu');
+
+// Добавляем обработчик клика
+menu.addEventListener('click', function() {
+// Переключаем класс open
+this.classList.toggle('open');
 });
 
 
@@ -45,11 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
     cards.forEach((card) => observer.observe(card));
   });
 
-  // Находим элемент с классом menu
-const menu = document.querySelector('.menu');
 
-// Добавляем обработчик клика
-menu.addEventListener('click', function() {
-  // Переключаем класс open
-  this.classList.toggle('open');
+
+document.addEventListener('DOMContentLoaded', function() {
+  const menu = document.querySelector('.menu');
+
+  menu.addEventListener('click', function() {
+    this.classList.toggle('active');
+  });
 });
