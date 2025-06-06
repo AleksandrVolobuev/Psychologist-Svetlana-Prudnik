@@ -1,0 +1,35 @@
+# ОС та редактори
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.swp
+
+# VS Code
+.vscode/
+
+# Node.js (якщо колись додаш npm)
+node_modules/
+dist/
+build/
+
+# Netlify (локальні дані)
+.netlify/
+
+# Mac/Linux/Windows системні файли
+ehthumbs.db
+Desktop.ini
+
+# npm lock-файли
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Файли резервних копій
+*.bak
+*.old
+*.orig
+*.tmp
+
+# Кеш браузера / dev-сервера (якщо додаватимеш)
+.cache/
